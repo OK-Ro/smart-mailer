@@ -119,8 +119,8 @@ const Register = () => {
   const handleRegister = async (e) => {
     e.preventDefault();
     try {
-      const response = await axios.post(
-        "http://localhost:5000/api/users/register", // replace with your actual endpoint
+      await axios.post(
+        "https://smart-mailer.onrender.com/api/users/register", // replace with your actual endpoint
         {
           email,
           password,
@@ -142,7 +142,7 @@ const Register = () => {
     <RegisterContainer>
       <BackgroundDesign />
       <RegisterForm>
-        <Brand>MyApp</Brand>
+        <Brand>Smart Mailer</Brand>
         <FormTitle>Create an Account</FormTitle>
         <form onSubmit={handleRegister}>
           <Input

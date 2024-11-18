@@ -102,7 +102,7 @@ const ViewMessages = () => {
     const fetchMessages = async () => {
       const token = localStorage.getItem("token");
       try {
-        const response = await axios.get("http://localhost:5000/api/messages", {
+        const response = await axios.get("https://smart-mailer.onrender.com", {
           headers: {
             Authorization: `Bearer ${token}`,
           },
