@@ -2,7 +2,7 @@ import axios from "axios";
 
 export const testBackendConnection = async () => {
   try {
-    const response = await axios.get("http://localhost:5000/");
+    const response = await axios.get("https://smart-mailer.onrender.com/");
     console.log("Backend response:", response.data);
 
     if (response.data && typeof response.data.speed === "number") {
@@ -19,11 +19,14 @@ export const testBackendConnection = async () => {
 
 export const checkAuth = async (token) => {
   try {
-    const response = await axios.get("http://localhost:5000/api/users/me", {
-      headers: {
-        Authorization: `Bearer ${token}`,
-      },
-    });
+    const response = await axios.get(
+      "https://smart-mailer.onrender.com/api/users/me",
+      {
+        headers: {
+          Authorization: `Bearer ${token}`,
+        },
+      }
+    );
     return { isAuthenticated: true, user: response.data };
   } catch (error) {
     return { isAuthenticated: false };

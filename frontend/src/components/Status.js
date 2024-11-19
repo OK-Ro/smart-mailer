@@ -46,11 +46,14 @@ const Status = () => {
     const fetchMessages = async () => {
       const token = localStorage.getItem("token");
       try {
-        const response = await axios.get("http://localhost:5000/api/messages", {
-          headers: {
-            Authorization: `Bearer ${token}`,
-          },
-        });
+        const response = await axios.get(
+          "https://smart-mailer.onrender.com/api/messages",
+          {
+            headers: {
+              Authorization: `Bearer ${token}`,
+            },
+          }
+        );
         setMessages(response.data);
       } catch (error) {
         console.error("Error fetching messages:", error);

@@ -119,17 +119,14 @@ const Register = () => {
   const handleRegister = async (e) => {
     e.preventDefault();
     try {
-      await axios.post(
-        "https://smart-mailer.onrender.com/api/users/register", // replace with your actual endpoint
-        {
-          email,
-          password,
-          name,
-          city,
-          phoneNumber,
-          website,
-        }
-      );
+      await axios.post("https://smart-mailer.onrender.com/api/users/register", {
+        email,
+        password,
+        name,
+        city,
+        phoneNumber,
+        website,
+      });
       alert("Registration successful!");
       navigate("/login"); // Redirect to the login page after successful registration
     } catch (error) {
@@ -142,7 +139,7 @@ const Register = () => {
     <RegisterContainer>
       <BackgroundDesign />
       <RegisterForm>
-        <Brand>Smart Mailer</Brand>
+        <Brand>MyApp</Brand>
         <FormTitle>Create an Account</FormTitle>
         <form onSubmit={handleRegister}>
           <Input
